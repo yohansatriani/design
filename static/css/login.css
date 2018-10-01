@@ -1,0 +1,41 @@
+body{
+    background-color: #EDF2F5;
+}
+
+.logo{
+    font-family:  Ubuntu, Helvetica, sans-serif;
+    font-size: 1.3em;
+    vertical-align: bottom;
+}
+
+#cstm-login-row{
+    min-height: 100vh;
+}
+
+#cstm-login-box{
+    width: 450px;
+    padding: 50px 80px 50px 80px;
+    border: 1px solid #BDD6D4;
+    border-radius: 10px;
+    background-color: #FDFDFD;
+}
+
+#cstm-submit-box{
+    background-color: #F0F5F8;
+}
+
+#login-nav{
+    background-color: #BDD6D4;
+}
+
+.cstm-login-form{
+    margin-bottom: 1rem;
+}
+
+.cstm-primary{
+    background-color: #7ACEEA;
+}
+
+#cstm-login-title{
+    margin-bottom: 1rem;
+}
