@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from design.views import login
+from design.views import login, nowlogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login),
+    path('signin/', nowlogin),
 ]
