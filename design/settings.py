@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     "/venv/web/design/static/",
 ]
+
+#LOGIN URL DEFAULT
+LOGIN_URL = '/login/'

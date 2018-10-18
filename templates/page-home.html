@@ -23,7 +23,7 @@
         <!--<link rel="stylesheet" href="{% static 'assets/scss/style.css' %}">-->
         <!--FONTS-->
         <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>-->
-        <!--CUSTOM CSS-->
+        <!--PAGE CSS-->
         {% block css %}
         <link href="{% static 'assets/css/lib/vector-map/jqvmap.min.css' %}">
         {% endblock %}
@@ -31,98 +31,27 @@
     <!--</head>-->
     {% block content %}
     <body>
-        <!-- Left Panel -->
-        <aside id="left-panel" class="left-panel">
-            <nav class="navbar navbar-expand-sm navbar-default">
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="./"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="{% static 'images/logo2.png' %}" alt="Logo"></a>
-                </div>
-                <div id="main-menu" class="main-menu collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                        </li>
-                        <h3 class="menu-title">Network Data</h3>
-                        <li class="active">
-                            <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Sites</a>
-                        </li>
-                        <li class="active">
-                            <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Links</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </nav>
-        </aside>
-        <!-- /#left-panel -->
-        <!-- Left Panel -->
-        <!-- Right Panel -->
+        <!--LEFT-PANEL-->
+        {% include 'component-left-panel.html' %}
+        <!--#LEFT-PANEL-->
+        <!--RIGHT-PANEL-->
         <div id="right-panel" class="right-panel">
-            <!-- Header-->
+            <!--HEADER-->
             <header id="header" class="header">
                 <div class="header-menu">
-                    <div class="col-sm-7">
-                        <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                        <div class="header-left">
-                            <button class="search-trigger"><i class="fa fa-search"></i></button>
-                            <div class="form-inline">
-                                <form class="search-form">
-                                    <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                    <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                                </form>
-                            </div>
-                            <div class="dropdown for-notification">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">0</span>
-                                </button>
-                            </div>
-                            <div class="dropdown for-message">
-                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                    id="message"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ti-email"></i>
-                                <span class="count bg-primary">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="user-area dropdown float-right">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{% static 'images/admin.jpg' %}" alt="User Avatar">
-                            </a>
-                            <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--HEADER-ITEM-->
+                    {% include 'component-header-item.html' %}
+                    <!--#HEADER-ITEM-->
+                    <!--PROFILE-->
+                    {% include 'component-profile.html' %}
+                    <!--#PROFILE-->
                 </div>
             </header>
-            <!-- /header -->
-            <!-- Header-->
-            <div class="breadcrumbs">
-                <div class="col-sm-4">
-                    <div class="page-header float-left">
-                        <div class="page-title">
-                            <h1>Dashboard</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="page-header float-right">
-                        <div class="page-title">
-                            <ol class="breadcrumb text-right">
-                                <li class="active">Dashboard</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--#HEADER-->
+            <!--BREADCRUMBS-->
+            {% include 'component-breadcrumbs.html' %}
+            <!--#BREADCRUMBS-->
+            <!--CONTENTS-->
             <div class="content mt-3">
                 <div class="col-sm-6 col-lg-3">
                     <div class="card text-white bg-flat-color-1">
@@ -238,11 +167,12 @@
                     </div>
                 </div>
             </div>
-            <!-- .content -->
+            <!--#CONTENTS-->
         </div>
-        <!-- /#right-panel -->
-        <!-- Right Panel -->
-        {% include 'page-script-home.html' %}
+        <!--#RIGHT-PANEL-->
+        <!--SCRIPTS-->
+        {% include 'script-home.html' %}
+        <!--#SCRIPTS-->
     </body>
     {% endblock %}
 <!--</html>-->
