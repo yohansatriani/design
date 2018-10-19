@@ -1,5 +1,7 @@
 {% extends "page-base-admin.html" %}
 {% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
     <!--<head>-->
@@ -55,7 +57,23 @@
             <!--#HEADER-->
             <!--BREADCRUMBS-->
             {% block breadcrumbs %}
-            {% include 'component-breadcrumbs.html' %}
+            <div class="breadcrumbs">
+                <div class="col-sm-4">
+                    <div class="page-header float-left">
+                        <div class="page-title">
+                            <h1>{{ title }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="page-header float-right">
+                        <div class="page-title">
+                            {{ block.super }}
+                            {% breadcrumb "Home" home %}
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endblock %}
             <!--#BREADCRUMBS-->
             <!--CONTENTS-->
