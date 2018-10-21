@@ -11,11 +11,11 @@ def dummy(request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         
 def home(request):
-    html = render_to_string('page-home.html', {'title': "Home", 'head': "Home"})
+    html = render_to_string('page-home.html', {'title': "Home", 'head': "Home", 'bcitems': ['home']})
     return HttpResponse(html)
 
 def sites(request):
-    html = render_to_string('page-sites.html', {'title': "Sites", 'head': "Sites"})
+    html = render_to_string('page-sites.html', {'title': "Sites", 'head': "Sites", 'bcitems': ['home', 'sites']})
     return HttpResponse(html)
 
 def auth_login(request):

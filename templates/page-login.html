@@ -37,6 +37,9 @@
                         </a>
                     </div>
                     <div class="login-form">
+                        {% for message in messages %}
+                        <p class="text-danger small">{{ message }}</p>
+                        {% endfor %}
                         <form class="form-group" action="{% url 'auth' %}" method="post">
                             {% csrf_token %}
                             <div class="form-group">
